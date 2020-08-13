@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> JSON Path Generator</title>
+<style>
+
+td {
+	padding: 15px;
+	text-align : left;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight : bold;
+}
+
+
+input[type=text] {
+    width: 700px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus {
+ border: 3px solid #555;
+}
+
+#generatePath {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	width: 700px;
+}
+
+#resetButton {
+    border: 1;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	width: 100px;
+}
+
+#openfile {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	width: 650px;
+}
+
+#formTable {
+padding-top : 15%;
+padding-left :10%;
+}
+
+#resultTable{
+padding-left :25%;
+text-align: center;
+}
+
+
+
+</style>
+</head>
+<body> 
+<table id="formTable">
+	<tr>
+	
+		<td>
+			UPLOAD A JSON FILE : 
+		</td>
+		<td>
+			 <input type="file" id="openfile"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			ENTER THE CLASS NAME: 
+		</td>
+		<td>
+			<input type="text" id="SearchText"/>
+		</td>
+		<td>
+		<button id="resetButton">RESET</button>
+		</td>
+		
+	</tr>	
+
+	<tr>
+		<td> </td>
+		<td>	
+	<button id="generatePath">GENERATE PATH</button>
+		</td>
+	</tr>
+</td>
+</table>
+<table id="resultTable">
+	<tr>
+		<td> </td>
+		<td>
+	<p id="result" > YOUR PATH WILL BE DISPLAYED HERE</p>
+		</td>
+	</tr>
+</table>	
+
+	<script type = "text/javascript" src="app.js"></script>
+<body>
+</html>
