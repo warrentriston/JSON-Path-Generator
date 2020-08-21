@@ -1,0 +1,585 @@
+const CLASS_NAMES = {
+
+    CONTROLS: {
+
+        ATOMIC: {
+
+            BUTTON: {
+
+                ICON: "mpageui-Button--icon"
+
+            },
+
+            CHECKBOX: {
+
+                CHECKBOX: "mpageui-Checkbox",
+
+                DISPLAY: "mpageui-Checkbox-display",
+
+                INPUT: "mpageui-Checkbox-input"
+
+            },
+
+            CARD: {
+
+                BASE: "mpageui-Card-base",
+
+                CARD: "mpageui-Card",
+
+                CENTER_CONTENT: "mpageui-Card-center-content",
+
+                CONTENT_WRAPPER: "mpageui-Card-data-content-wrapper",
+
+                DATA_CONTENT: "mpageui-Card-data-content",
+
+                DATA_LABEL: "mpageui-Card-data-label",
+
+                FOOTER: "mpageui-Card-footer",
+
+                FOOTER_ICON_WRAPPER: "mpageui-Card-footer-icon-wrapper",
+
+                FOOTER_TEXT: "mpageui-Card-footer-text",
+
+                ROOT: "mpageui-Card",
+
+                SINGLE_COLUMN: "mpageui-Card-data-item--singleColumn"
+
+            },
+
+            CONTENT_PANEL: "mpageui-ContentPanel",
+
+            DATA_SECTION: {
+
+                CELL: "mpageui-DataSection-cell",
+
+                CONTENT: "mpageui-DataSection-content",
+
+                CONTENT_PANEL: "mpageui-DataSection-contentPanel",
+
+                DATA_SECTION: "mpageui-DataSection",
+
+                ROOT: "mpageui-DataSection",
+
+                TEXT: "mpageui-DataSection-text"
+
+            },
+
+            FLOAT_PANE: "mpageui-FloatingPane",
+
+            FLOWSHEET: {
+
+                BODY: "mpageui-Flowsheet-body",
+
+                CELL_WRAPPER: "mpageui-Flowsheet-compositeHeader-cell-wrapper",
+
+                COMPOSITE_HEADER: "mpageui-Flowsheet-compositeHeader",
+
+                FLOWSHEET: "mpageui-Flowsheet",
+
+                HEADER: "mpageui-Flowsheet-header",
+
+                PRIMARY_CELL: "mpageui-Flowsheet-compositeHeader-primaryCell",
+
+                ROW: "mpageui-Flowsheet-row",
+
+                ROW_CELL: "mpageui-Flowsheet-row-cell",
+
+                ROW_WRAPPER: "mpageui-Flowsheet-row-wrapper",
+
+                SECONDARY_CELL: "mpageui-Flowsheet-compositeHeader-secondaryCell",
+
+                SUBSECTION: "mpageui-Flowsheet-sectionContainer",
+
+                SUBSECTION_HEADER: "mpageui-Flowsheet-sectionHeader",
+
+                SUBSECTION_HEADER_CONTENT: "mpageui-Flowsheet-sectionHeader-content"
+
+            },
+
+            FOOTER: {
+
+                AFFIRM: "mpageui-AffirmDenyFooter-affirm",
+
+                FOOTER: "mpageui-FooterBase",
+
+                NOTIFICATION: "mpageui-FooterBase-lSection",
+
+                NOTIFICATION_BASE: "mpageui-u-text-size-base",
+
+                NOTIFICATION_FOOTER: "mpageui-FooterBase--bisected",
+
+                PAGINATION: "mpageui-FooterBase-rSection"
+
+            },
+
+            HEADER: {
+
+                CONTENT_HEADER: {
+
+                    ACTION: "mpageui-ContentHeader-action",
+
+                    ACCESSORY: "mpageui-ContentHeader-accessory",
+
+                    CONTENT: "mpageui-ContentHeader-content",
+
+                    ROOT: "mpageui-ContentHeader",
+
+                    TITLE: "mpageui-ContentHeader-title",
+
+                    WRAPPER: "mpageui-ContentHeader-content-wrapper"
+
+                }
+
+            },
+
+            INDICATOR: {
+
+                NO_RESULTS: "mpageui-NoResults",
+
+                NO_RESULTS_INFO: "mpageui-NoResultsInfo",
+
+                SPINNER: "mpageui-LoadingSpinner-icon"
+
+            },
+
+            LABEL: {
+
+                ANCHOR: "mpageui-Anchor",
+
+                NO_RESULTS: "mpageui-NoResults"
+
+            },
+
+            SELECT: "mpageui-Select",
+
+            SVG: {
+
+                ABNORMAL_ICON: "mpageui-SvgIcon-clinical-abnormal",
+
+                CLINICAL_BADGE: "mpageui-ClinicalBadge-icon",
+
+                CLINICAL_CRITICAL: "mpageui-SvgIcon-clinical-critical",
+
+                CLINICAL_HIGH: "mpageui-SvgIcon-clinical-high",
+
+                CLINICAL_LOW: "mpageui-SvgIcon-clinical-low",
+
+                COMPLETE_STATUS_ICON: "mpageui-SvgIcon-status-complete",
+
+                ICON: "mpageui-SvgIcon",
+
+                INCOMPLETE_STATUS_ICON: "mpageui-SvgIcon-status-incomplete",
+
+                INFO_BUTTON_ICON: "mpageui-SvgIcon mpageui-SvgIcon-info",
+
+                MODIFIED_ICON: "mpageui-SvgIcon-clinical-modified"
+
+            },
+
+            TABLE: {
+
+                BODY: "mpageui-Table-body",
+
+                HEADER: "mpageui-Table-header",
+
+                HEADER_LABEL: "mpageui-Table-header-label",
+
+                ROW: "mpageui-Table-row",
+
+                ROW_CELL: "mpageui-Table-row-cell",
+
+                ROW_WRAPPER: "mpageui-Table-row-wrapper",
+
+                SUBSECTION: "mpageui-Table-sectionContainer",
+
+                SUBSECTION_HEADER: "mpageui-Table-sectionHeader",
+
+                TABLE: "mpageui-Table"
+
+            },
+
+            TABS: {
+
+                COL: "mpageui-u-flexgrid-col",
+
+                COLUMN_HEADER: "mpageui-u-flexgrid-col-12",
+
+                CONTENTS: "mpageui-TabContents",
+
+                JUSTIFY_END: "mpageui-u-flexgrid-row--justify-end",
+
+                LABEL: "mpageui-TabLabel-display",
+
+                PANEL: "mpageui-TabPanel",
+
+                ROW: "mpageui-u-flexgrid-row",
+
+                TAB: "mpageui-Tab"
+
+            },
+
+            TEXT: {
+
+                CRITICAL: "mpageui-u-text-color-clinical-critical",
+
+                SECONDARY: "mpageui-u-text-color-secondary"
+
+            },
+
+            TEXT_AREA: "mpageui-TextArea"
+
+        },
+
+        COMPOSITE: {
+
+            BANNER: {
+
+                BANNER_ACTION_BUTTON: "mpageui-BannerItem-actions",
+
+                BANNER_CHEVRON: "mpageui-BannerItem-chevron",
+
+                BANNER_CONTENT: "mpageui-BannerItem-content",
+
+                BANNER_MANAGER: "mpageui-BannerManager",
+
+                BANNER_TEXT: "mpageui-BannerItem-textContent",
+
+                BANNER_DETAILS_LINK: "mpageui-BannerItem-moreDetailsAnchor",
+
+                BANNER_DETAILS_TEXT: "mpageui-BannerItem-moreDetailsText",
+
+                BANNER_ITEM: "mpageui-BannerItem",
+
+                BANNER_ICON: "mpageui-BannerItem-icon"
+
+            },
+
+            BTN_GRP: "mpageui-ButtonGroup",
+
+            BUTTON: "mpageui-Button",
+
+            BUTTON_DISPLAY: "mpageui-Button-display",
+
+            COLLAPSE_GROUP: {
+
+                ITEM: "mpageui-CollapseGroup-item",
+
+                ROOT: "mpageui-CollapseGroup"
+
+            },
+
+            COMPONENT_HEADER: {
+
+                BUTTON: "mpageui-ComponentHeader-buttons",
+
+                CARD_VIEW_LOOKBACK_SUB_HEADER: "mpageui-ComponentHeader-lookbackSubheader",
+
+                COUNT: "mpageui-ComponentHeader-count",
+
+                DEFAULT_LOOKBACK_TEXT: "mpageui-ComponentHeader-defaultLookback",
+
+                GAP_CHECK_ICON: "mpageui-ComponentHeader-gapcheckicon",
+
+                LOOKBACK_LABEL: "mpageui-ComponentHeader-lookbackLabel",
+
+                LOOKBACK_SELECTOR: "mpageui-ComponentHeader-lookbackSelector",
+
+                MAIN: "mpageui-ComponentHeader-main",
+
+                REFRESH: "mpageui-ComponentHeader-refresh",
+
+                SMALL_LOOKBACK: "mpageui-ComponentHeader-smalllookback",
+
+                TITLE: "mpageui-ComponentHeader-title",
+
+                TOGGLES: "mpageui-ComponentHeader-toggles"
+
+            },
+
+            FORM: {
+
+                RIGHT_COL: "mpageui-FormControl-rightColumn",
+
+                TEXT: {
+
+                    ERROR: "mpageui-FormControl-text--error",
+
+                    HELPER: "mpageui-FormControl-text--helper",
+
+                    ERROR_BASE:"mpageui-u-text-error"
+
+                }
+
+            },
+
+            MENU_BUTTON: {
+
+                ICON: "mpageui-MenuButton-icon",
+
+                MENU_BUTTON: "mpageui-MenuButton"
+
+            },
+
+
+
+            MODAL: {
+
+                BODY: "mpageui-Modal-body",
+
+                CONTENT: "mpageui-Modal-content",
+
+                FOOTER: "mpageui-Modal-footer",
+
+                HEADER: "mpageui-Modal-header",
+
+                TITLE: "mpageui-ContentHeader-title",
+
+                WINDOW: "mpageui-Modal"
+
+            },
+
+            PANEL: {
+
+                DETAIL_CONTENT_PANEL: "mpageui-ContentPanel",
+
+                DETAIL_PANEL: "mpageui-DetailPanel",
+
+                DETAIL_PANEL_BODY: "mpageui-ContentPanel-body",
+
+                DETAIL_PANEL_BANNER: "mpageui-DetailPanel-bannersSection",
+
+                DETAIL_PANEL_DATA: "mpageui-DetailPanel-bodySection",
+
+                DETAIL_PANEL_HEADER: "mpageui-DetailPanel-headerSection",
+
+                DETAIL_PANEL_LABEL: "mpageui-DataSection-label",
+
+                DETAIL_PANEL_LAYOUT: "mpageui-DetailPanelLayout",
+
+                DETAIL_PANEL_PATIENT_HEADER: "patient-info-column-detailPanel-header",
+
+                DETAIL_PANEL_RESULT_VALUE: "mpageui-DataSection-content",
+
+                DETAIL_PANEL_SUBTITLE: "mpageui-DetailPanelTitle-subTitle",
+
+                DETAIL_PANEL_TITLE: "mpageui-DetailPanelTitle-title"
+
+            },
+
+            POPUP: {
+
+                ANCHOR: "mpageui-Popup-anchor",
+
+                ARROW: "mpageui-Popup--arrow",
+
+                CARD_VIEW_CONTENT: "mpageui-List-selectgroup",
+
+                CARD_VIEW_DISMISS: "mpageui-ContentHeader-action-right",
+
+                CONTENT: "mpageui-Popup-content",
+
+                FOOTER: "mpageui-Popup-pane-footer",
+
+                FLOAT_PANE: "mpageui-Popup-floatingPane",
+
+                FLOAT_PANE_SMALL: "mpageui-Popup-floatingPane--small",
+
+                LIST_BUTTON: "mpageui-Button--listselect",
+
+                LIST_BUTTON_ITEM: "mpageui-ListButton",
+
+                LIST_MENU_CONTENT: "mpageui-ListMenu-content",
+
+                LIST_SELECTED_BUTTON: "mpageui-Button-display--after",
+
+                PANE: "mpageui-PopupPane",
+
+                PANE_HEADER: "mpageui-Popup-pane-header",
+
+                POPUP: "mpageui-Popup",
+
+                POPUP_LAYER: "mpageui-Popup-layover"
+
+            },
+
+            RESPONSIVE_BTN_GRP: "mpageui-ResponsiveButtonGroup",
+
+            SELECTED_BTN_GRP: "mpageui-Button[aria-selected]"
+
+        },
+
+        WORKLIST: {
+
+            DATAGRID: {
+
+                DATAGRID: "mpageui-DataGrid",
+
+                HEADER: "mpageui-DataGrid-header",
+
+                BODY: "mpageui-DataGrid-body",
+
+                ROW_WRAPPER: "mpageui-DataGrid-row-wrapper",
+
+                ROW_CELL: "mpageui-DataGrid-row-cell",
+
+                PATIENT_INFO_COLUMN: "patient-info-column-name",
+
+                CELL_COMPOSITION: "cellcomposition-Flex-child",
+
+                CARD_DATA_CONTENT: "mpageui-Card-data-content"
+
+            },
+
+            VERTICAL_ROW: "worklist-vertical-row-item",
+
+            NO_RESULTS_INFO: "mpageui-NoResultsInfo-title--small"
+
+        }
+
+    },
+
+    DOCUMENT_VIEWER: {
+
+        DOCUMENT_MAIN_CONTAINER: "mrv-doc-main-container"
+
+    },
+
+    FUSION_COMPONENT: {
+
+        BODY: "mpage-FusionComponent-bodySection",
+
+        FOOTER: "mpage-FusionComponent-footerSection",
+
+        HEADER: "mpage-FusionComponent-headerSection",
+
+        TOOLBAR: "mpage-FusionComponent-toolbarSection"
+
+    },
+
+    GRAPH_CONTAINER: "carbon-graph-container",
+
+    LOGIN: {
+
+        LOGIN_BUTTON: "loginButton",
+
+        LOGIN_PAGE: "form.standard fieldset",
+
+        PASSOWRD: "j_password",
+
+        USER_NAME: "j_username"
+
+    },
+
+    NAVIGATOR: {
+
+        CONTENTS: "mpageui-Navigator-contents",
+
+        NAVIGATOR: "mpageui-Navigator",
+
+        PIN: "mpageui-Navigator-utils-pin",
+
+        SELECTED_COMPONENT: "dr-selected",
+
+        TAB: "mpageui-Navigator-tab",
+
+        ICON: {
+
+            SATISFIED: "dr-gc-icon.dr-satisfied",
+
+            REQUIRED: "dr-gc-icon.dr-required"
+
+        }
+
+    },
+
+    WORKLIST_TOOLBAR: {
+
+        TOOLBAR: {
+
+            WORKLIST_TOOLBAR: "worklist-toolbar",
+
+            TOOLBAR_ELEMENT: "toolbarElement",
+
+            TOOLBAR_OBSOLUTE: "mpageui-u-pad-absolute-very-tight",
+
+            TOOLBAR_DROPDOWN: "mpageui-Select"
+
+        }
+
+    },
+
+    RESULT_VIEWER: {
+
+        MODAL: "dyn-modal-dialog",
+
+        BODY: "dyn-modal-body-container",
+
+        CLOSE_BUTTON: "dyn-modal-hdr-close"
+
+    },
+
+    SORT_OPTIONS: {
+
+        ASC: "sort-ascending",
+
+        DEC: "sort-descending"
+
+    },
+
+    WORKLIST: {
+
+        PAGE_LEVEL_CONTROLS_SECTION: "vwp-container",
+
+        PAGE_LEVEL_CONTROLS_MENU: "vwp-page-menu",
+
+        PAGE_LEVEL_CONTROLS_MENU_SELECTOR: "menu-item"
+
+    },
+
+    MODAL: "modal-dialog-btns",
+
+    MODAL_CONTENT: {
+
+        POPUP: "mpageui-Modal-content",
+
+        FOOTER: "mpageui-Modal-footer",
+
+        DATA_CONTENT: "mpageui-Card-data-content"
+
+    },
+
+    VIEWPOINT: {
+
+        BODY: "vwp-body-container",
+
+        MENU: "menu-page-menu",
+
+        NAVIGATOR_PINNED: "mpage-vwp-nav--pinned",
+
+        UTILITY: {
+
+            BADGE: "mpage-vwp-Utility-badge",
+
+            BADGE_POSITIVE: "mpageui-u-badge--positive",
+
+            ICON: "mpage-vwp-Utility-icon",
+
+            ICON_DISABLED: "mpage-vwp-Utility-icon--disabled",
+
+            ROOT: "mpage-vwp-Utility"
+
+        },
+
+        VIEWS: "vwp-views"
+
+    }
+
+};
+
+
+
+module.exports = {
+
+    CLASS_NAMES
+
+};
